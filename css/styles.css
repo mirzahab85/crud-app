@@ -1,0 +1,207 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  color: white;
+}
+
+.container > .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: green;
+}
+
+.container > .header > .logo {
+  display: flex;
+  flex-direction: row;
+}
+
+.container > .header > .logo h2 {
+  padding: 30px;
+}
+
+.container > .header > .logo > img {
+  width: 100px;
+  padding: 10px 10px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 50px;
+  list-style: none;
+}
+
+
+nav li {
+  padding: 10px 30px;
+  font-size: 20px;
+  color: white;
+}
+
+.menu {
+  margin: 100px 10px;
+}
+
+table,
+tr,
+td,
+th {
+  border: 1px solid black;
+  text-align: center;
+  height: 210%;
+}
+
+th.a {
+  width: 5%;
+}
+th.b,
+th.c,
+th.d,
+th.e,
+th.g,
+th.h,
+th.i
+{
+  width: 10%;
+}
+
+th.f {
+  width: 10%;
+}
+
+footer {
+  position: fixed;
+  padding: 20px;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+
+/* LOGIN */
+
+.login {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 103px 40px;
+  
+}
+
+.login > .row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  width: auto;
+  padding: 30px;
+  padding-bottom: 110px;
+}
+
+.login > .row  h1 {
+  padding: 30px;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+  background: #16a085;
+}
+
+.login > .row > form  {
+  display: flex;
+  padding: 203px 80px;
+  margin: 30px;
+  flex-direction: column;
+  box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+  padding-top: 50px;
+}
+
+.login > .row > form > input {
+  border-radius: 5px;
+}
+
+.login > .row > form > input[type=submit] {
+  height: 35px;
+  background: #16a085;
+  color: #fff;
+  font-size: 20px;
+}
+
+.login > .row > form ::placeholder {
+  color: #999;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+.login > .row > form > #username {
+  height: 35px;
+  width: 300px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.login > .row > form > #password  {
+  height: 35px;
+  font-size: 18px;
+  width: 300px;
+  text-align: center;
+}
+
+.login > .row > form > #login  {
+  height: 35px;
+  font-size: 18px;
+  width: 400px;
+  text-align: center;
+}
+
+/* REGISTER */
+.registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 33px 40px;
+}
+
+.registration > h1 {
+  padding: 20px;
+  background: #16a085;
+  color: #ffff;
+  border-radius: 5px 5px 0 0;
+}
+
+.registration > form {
+  display: flex;
+  background: #fff;
+  margin: 30px;
+  padding: 50px;
+  box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+  flex-direction: column;
+  gap: 8px;
+}
+
+.registration > form > input {
+  height: 40px; 
+  border-radius: 5px;
+}
+
+.registration > form > input::placeholder {
+  color: #999;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.registration > form > input[type=submit] {
+  background: #16a085;
+  color: #fff;
+  font-size: 20px;
+}
