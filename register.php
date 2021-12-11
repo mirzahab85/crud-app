@@ -62,16 +62,17 @@ if (isset($_POST['Register']))
         $error_email2 = '<p style="color:red"><strong>Invalid e-mail</strong></p>';
     }
     
-    else if (empty($gender)) 
-    {
-        $error_gender1 = '<p style="color:red"><strong>Please type male or female</strong></p>';
-    }
-
     else if(strlen($_POST['password']) < 6)
     {
       $error_password2 = '<p style="color:red"><strong>Password must contain at least 6 characters.</strong></p>';
     }
+    
+    if(empty($_POST['gender'])) {
+        $error_gender = '<p style="color:red"><br><strong>You have select male or female</strong></p>';
+    }
 
+
+    
     else
     {
         $checkUsername = "SELECT * FROM `user` WHERE username='" . $username . "'";
@@ -85,7 +86,7 @@ if (isset($_POST['Register']))
 
         else
         {
-            $sql = "INSERT INTO user (firstname,lastname,username,email,password, address, phone, image,gender) VALUES ('$firstname','$lastname','$username','$email','$password', '$address', '$phone', '$image','$gender')";
+            $sql = "INSERT INTO user (firstname,lastname,username,email,password, address, phone, image,gender) VALUES ('$firstname','$lastname','$username','$email','$password', '$address', '$phone', '$image', '$gender')";
 
             if(move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
               $msg = "Image uploaded successfully";
@@ -102,8 +103,8 @@ if (isset($_POST['Register']))
 
         }
     }
-
 }
+
 
 ?>
 
@@ -111,7 +112,8 @@ if (isset($_POST['Register']))
 
     <div class="registration">
         <h1>Registration</h1>
-        <form action="register.php" method="post" enctype="multipart/form-data" style="text-align:center;">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data"
+            style="text-align:center;">
             <!-- <label id="icon" for="name"><i class="fas fa-user-circle"></i></label> -->
             <input type="text" name="firstname" id="firstname" placeholder="First Name"
                 value="<?php echo isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>" />
@@ -143,16 +145,25 @@ else if (isset($error_email2)) echo $error_email2 ?>
                 value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>" />
             <?php if (isset($error_phone)) echo $error_phone ?>
             <br>
-            <!-- <label id="icon" for="gender"><i class="icon-phone"></i></label> -->
-            <input type="text" name="gender" id="gender" placeholder="Gender"
-                value="<?php echo isset($_POST['gender']) ? $_POST['gender'] : '' ?>" />
-            <?php if (isset($error_gender1)) echo $error_gender1 ?>
+
             <br>
             <!-- <label id="icon" for="name"><i class="icon-shield"></i></label> -->
             <input type="password" name="password" id="password" placeholder="Password"
                 value="<?php echo isset($_POST['password']) ? $_POST['password'] : '' ?>" />
             <?php if (isset($error_password1)) echo $error_password1; else if (isset($error_password2)) echo $error_password2; ?>
             <br>
+
+            <div class="gender">
+                <strong>Gender:</strong>
+                <input type="radio" name="gender"
+                    value="<?php echo isset($_POST['gender[]']) ? $_POST['gender[]'] : '' ?>" />Male</input><br>
+                <input type="radio" name="gender"
+                    value="<?php echo isset($_POST['gender[]']) ? $_POST['gender[]'] : '' ?>">Female</input><br>
+                <?php if (isset($error_gender)) echo $error_gender; else if (isset($error_gender)) echo $error_gender; ?>
+
+                <br>
+            </div>
+
             <input type="hidden" name="size" value="1000000">
             <input type="file" name="image" style="margin-left:65px;">
             <?php if (isset($image_error)) echo $image_error; ?>

@@ -165,6 +165,7 @@ footer {
 }
 
 /* REGISTER */
+
 .registration {
   display: flex;
   flex-direction: column;
@@ -204,4 +205,15 @@ footer {
   background: #16a085;
   color: #fff;
   font-size: 20px;
+}
+
+.registration > form > .gender {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 18px;
+}
+
+.registration > form > .gender > input[type=radio] {
+  margin: 5px;
 }
