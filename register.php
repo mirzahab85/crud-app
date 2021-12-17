@@ -7,13 +7,13 @@ define('CSSPATH', 'css/styles.css/');
 
 if (isset($_POST['Register']))
 {
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $username = $_POST['username'];
-    $email = $_POST['email'];
+    $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
+    $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
+    $username = mysqli_real_escape_string($conn,$_POST['username']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = PASSWORD_HASH($_POST["password"], PASSWORD_DEFAULT);
-    $address = $_POST['address'];
-    $phone = $_POST['phone'];
+    $address = mysqli_real_escape_string($conn, $_POST['address']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $gender = $_POST['gender'];
     $target = "images/".basename($_FILES['image']['name'])."/";
     $image = $_FILES['image']['name'];
@@ -48,6 +48,10 @@ if (isset($_POST['Register']))
         $error_phone = '<p style="color:red"><strong>Phone is required</strong></p>';
     }
 
+    if (preg_match("/^([0-9]{10})$/", $error_phone)) {
+        echo "Mobile number is correct";
+    }
+
     if (empty($_POST['password']))
     {
         $error_password1 = '<p style="color:red"><strong>Password is required</strong></p>';
@@ -67,8 +71,8 @@ if (isset($_POST['Register']))
       $error_password2 = '<p style="color:red"><strong>Password must contain at least 6 characters.</strong></p>';
     }
     
-    if(empty($_POST['gender'])) {
-        $error_gender = '<p style="color:red"><br><strong>You have select male or female</strong></p>';
+    else if(empty($gender)) {
+         $error_gender = '<p style="color:red"><br><strong>You have select male or female</strong></p>';
     }
 
 
@@ -155,10 +159,8 @@ else if (isset($error_email2)) echo $error_email2 ?>
 
             <div class="gender">
                 <strong>Gender:</strong>
-                <input type="radio" name="gender"
-                    value="<?php echo isset($_POST['gender[]']) ? $_POST['gender[]'] : '' ?>" />Male</input><br>
-                <input type="radio" name="gender"
-                    value="<?php echo isset($_POST['gender[]']) ? $_POST['gender[]'] : '' ?>">Female</input><br>
+                <input type="radio" name="gender" value="male" />Male</input><br>
+                <input type="radio" name="gender" value="female">Female</input><br>
                 <?php if (isset($error_gender)) echo $error_gender; else if (isset($error_gender)) echo $error_gender; ?>
 
                 <br>

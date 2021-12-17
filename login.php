@@ -53,7 +53,9 @@ if (isset($_POST['Login'])) {
             <label id="icon" for="name"><i class="icon-shield"></i></label>
             <input type="password" name="password" id="password" placeholder="Password" /><br> <?php if (isset($pass)) echo $pass;
       else if (isset($pass1)) echo $pass1; ?> <input type="submit" value="Login" name="Login" />
+            <div class="signup">Not yet member? <a href="register.php">Signup now</a></div>
         </form>
+
         <?php if (isset($err)) echo $err;
     if (isset($_SESSION['success'])) echo $_SESSION['success']; ?>
     </div>

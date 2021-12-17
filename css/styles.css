@@ -5,6 +5,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+img {
+  width: 40%;
+}
+
 h2 {
   color: white;
 }
@@ -39,7 +43,6 @@ nav {
   list-style: none;
 }
 
-
 nav li {
   padding: 10px 30px;
   font-size: 20px;
@@ -68,8 +71,7 @@ th.d,
 th.e,
 th.g,
 th.h,
-th.i
-{
+th.i {
   width: 10%;
 }
 
@@ -96,40 +98,44 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 103px 40px;
-  
 }
 
 .login > .row {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   width: auto;
   padding: 30px;
   padding-bottom: 110px;
 }
 
-.login > .row  h1 {
+.login > .row h1 {
   padding: 30px;
   color: #fff;
   border-radius: 5px 5px 0 0;
   background: #16a085;
 }
 
-.login > .row > form  {
+.login > .row > form {
   display: flex;
   padding: 203px 80px;
   margin: 30px;
   flex-direction: column;
-  box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
   padding-top: 50px;
+}
+
+.login > .row > form > div {
+  text-align: center;
+  line-height: 3;
 }
 
 .login > .row > form > input {
   border-radius: 5px;
 }
 
-.login > .row > form > input[type=submit] {
+.login > .row > form > input[type="submit"] {
   height: 35px;
   background: #16a085;
   color: #fff;
@@ -142,7 +148,6 @@ footer {
   font-weight: 500;
 }
 
-
 .login > .row > form > #username {
   height: 35px;
   width: 300px;
@@ -150,14 +155,14 @@ footer {
   text-align: center;
 }
 
-.login > .row > form > #password  {
+.login > .row > form > #password {
   height: 35px;
   font-size: 18px;
   width: 300px;
   text-align: center;
 }
 
-.login > .row > form > #login  {
+.login > .row > form > #login {
   height: 35px;
   font-size: 18px;
   width: 400px;
@@ -185,13 +190,13 @@ footer {
   background: #fff;
   margin: 30px;
   padding: 50px;
-  box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   gap: 8px;
 }
 
 .registration > form > input {
-  height: 40px; 
+  height: 40px;
   border-radius: 5px;
 }
 
@@ -201,7 +206,7 @@ footer {
   font-weight: 500;
 }
 
-.registration > form > input[type=submit] {
+.registration > form > input[type="submit"] {
   background: #16a085;
   color: #fff;
   font-size: 20px;
@@ -214,6 +219,81 @@ footer {
   font-size: 18px;
 }
 
-.registration > form > .gender > input[type=radio] {
+.registration > form > .gender > input[type="radio"] {
   margin: 5px;
+}
+
+/* PROFILE */
+
+#profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 74px;
+}
+
+#profile > h1 > img {
+  width: 60%;
+}
+
+#profile > h1 {
+  padding: 5px;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+#profile > h1 > p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* EDIT PROFILE */
+
+.edit-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+}
+
+.edit-contact > form {
+  display: flex;
+  background: #fff;
+  margin: 30px;
+  padding: 50px;
+  box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-contact > form > h3 {
+  padding: 30px;
+  background: #16a085;
+  color: #ffff;
+  border-radius: 5px 5px 0 0;
+}
+
+.edit-contact > form > input {
+  height: 40px;
+  border-radius: 5px;
+}
+
+/* VIEW */
+
+.view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 74px;
+}
+
+.view-container > h1 > img {
+  width: 50%;
+  height: 40%;
+}
+
+.view-container > h1 {
+  padding: 5px;
+  font-size: 24px;
 }

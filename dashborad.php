@@ -10,7 +10,7 @@ include('database.php');
 include('header.php');
 include('footer.php');
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM admin";
 $result = mysqli_query($conn, $sql);
 
 ?>
